@@ -35,8 +35,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        // icon: `src/assets/images/favicon.png`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
   ],
-}
+};
