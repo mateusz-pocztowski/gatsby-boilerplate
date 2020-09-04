@@ -15,8 +15,8 @@ const LazyImage = styled(Img).attrs(props => ({
   max-height: ${props => (props.maxHeight ? `${props.maxHeight}px` : '100%')};
   max-width: ${props => (props.maxWidth ? `${props.maxWidth}px` : '100%')};
   transition: 0.6s ease;
-  ${({ slideImage }) =>
-    slideImage &&
+  ${({ fullSlideImage }) =>
+    fullSlideImage &&
     css`
       height: 100vh;
       &:before {
@@ -27,32 +27,6 @@ const LazyImage = styled(Img).attrs(props => ({
         z-index: 1;
         overflow: hidden;
         background-color: rgba(0, 0, 0, 0.4);
-      }
-    `}
-  ${({ galleryImage }) =>
-    galleryImage &&
-    css`
-      width: 185px;
-      height: 183px;
-      ${({ theme }) => theme.mq.xs} {
-        width: 290px;
-        height: 250px;
-      }
-      ${({ theme }) => theme.mq.s} {
-        width: 420px;
-        height: 350px;
-      }
-      ${({ theme }) => theme.mq.md} {
-        width: 620px;
-        height: 450px;
-      }
-      ${({ theme }) => theme.mq.lg} {
-        width: 820px;
-        height: 550px;
-      }
-      ${({ theme }) => theme.mq.xxl} {
-        width: 1080px;
-        height: 600px;
       }
     `}
 `
