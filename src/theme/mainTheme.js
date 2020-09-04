@@ -23,7 +23,7 @@ export const theme = {
   bold: 700,
   superBold: 900,
   fontSize: {
-    xs: '1.4rem',
+    xs: '1.2rem',
     s: '1.4rem',
     m: '1.6rem',
     md: '1.9rem',
