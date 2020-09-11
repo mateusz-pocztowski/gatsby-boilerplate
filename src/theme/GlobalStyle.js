@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: super;
   }
 
+  b {
+    font-weight: ${({ theme }) => theme.bold}
+  }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
@@ -40,6 +44,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.mainFont};
     font-size: 1.6rem;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

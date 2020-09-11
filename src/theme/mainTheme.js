@@ -1,15 +1,15 @@
 const breakpoints = {
-  xs: 420,
+  xs: 440,
   s: 576,
   md: 768,
   lg: 992,
   xl: 1200,
-  xxl: 1400,
-}
+  xxl: 1440,
+};
 
 export const theme = {
   fonts: {
-    mainFont: `'Lato', sans-serif`,
+    mainFont: `'Montserrat', sans-serif`,
   },
   colors: {
     white: '#ffffff',
@@ -19,11 +19,13 @@ export const theme = {
     gray200: '#EEEEEE',
     gray300: '#BFBFBF',
   },
+  light: 300,
   regular: 400,
+  medium: 500,
+  semiBold: 600,
   bold: 700,
-  superBold: 900,
   fontSize: {
-    xs: '1.2rem',
+    xs: '1.1rem',
     s: '1.4rem',
     m: '1.6rem',
     md: '1.9rem',
@@ -39,7 +41,7 @@ export const theme = {
     mobile: '80px',
   },
   mq: Object.keys(breakpoints).reduce((acc, breakpoint) => {
-    acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`
-    return acc
+    acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;
+    return acc;
   }, {}),
-}
+};

@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Content = styled.div`
   margin: 0 auto;
+  width: 100%;
   max-width: 1440px;
   padding: 5px 10px;
   ${({ theme }) => theme.mq.xs} {
@@ -10,6 +11,6 @@ const Content = styled.div`
   ${({ theme }) => theme.mq.md} {
     padding: 5px 30px;
   }
-`
+`;
 
-export default Content
+export default Content;
