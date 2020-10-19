@@ -2,10 +2,10 @@ import styled, { css, keyframes } from 'styled-components';
 
 const spin = keyframes`
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 `;
 
@@ -34,8 +34,9 @@ const Button = styled.button`
       &:before {
         content: '';
         position: absolute;
-        top: 27%;
-        left: 45%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 24px;
         height: 24px;
         border: 3px solid ${({ theme }) => theme.white};

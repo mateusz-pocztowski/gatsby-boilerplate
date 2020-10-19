@@ -21,10 +21,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
-        fonts: [`Montserrat:300, 400, 500, 600, 700`],
-        display: 'swap',
+        fonts: [
+          {
+            family: 'Montserrat',
+            weights: ['300', '400', '500', '600', '700'],
+          },
+        ],
       },
     },
     {

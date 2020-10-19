@@ -1,16 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
-const useDetectOutsideClick = (ref, handler) => {
+const useDetectOutsideClick = (ref, handler, parentRef = null) => {
   useEffect(() => {
     const listener = e => {
-      if (!ref.current || ref.current.contains(e.target)) return
-      handler(false)
-    }
+      if (
+        !ref.current ||
+        ref.current.contains(e.target) ||
+        (parentRef && parentRef.current.contains(e.target))
+      )
+        return;
+      handler(false);
+    };
 
-    document.addEventListener('mousedown', listener)
+    document.addEventListener('mousedown', listener);
 
-    return () => document.removeEventListener('mousedown', listener)
-  }, [ref, handler])
-}
+    return () => document.removeEventListener('mousedown', listener);
+  }, [ref, handler]);
+};
 
-export default useDetectOutsideClick
+export default useDetectOutsideClick;

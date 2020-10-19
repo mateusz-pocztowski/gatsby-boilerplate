@@ -1,3 +1,5 @@
+import * as polished from 'polished';
+
 const breakpoints = {
   xs: 440,
   s: 576,
@@ -44,4 +46,5 @@ export const theme = {
     acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;
     return acc;
   }, {}),
+  ...polished,
 };
