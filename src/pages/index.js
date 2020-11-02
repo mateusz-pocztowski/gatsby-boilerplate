@@ -2,11 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import SEO from 'components/shared/SEO';
+import Header from 'components/Header/Header';
 
 const IndexPage = ({ data }) => {
+  const heroImg = data.heroImg.childImageSharp.fluid;
+
+  const slides = [
+    {
+      src: heroImg,
+      alt: 'hero image',
+      title: 'Slide 1',
+    },
+    {
+      src: heroImg,
+      alt: 'hero image',
+      title: 'Slide 2',
+    },
+    {
+      src: heroImg,
+      alt: 'hero image',
+      title: 'Slide 3',
+    },
+  ];
+
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Strona główna" />
+      <Header slides={slides} />
+      <main>
+        <div style={{ height: '100vh' }} />
+      </main>
     </>
   );
 };
@@ -17,9 +42,9 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query queryHomePage {
-    image: file(name: { eq: "favicon" }) {
+    heroImg: file(name: { eq: "hero-image" }) {
       childImageSharp {
-        fluid(maxWidth: 100) {
+        fluid(maxWidth: 1920, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

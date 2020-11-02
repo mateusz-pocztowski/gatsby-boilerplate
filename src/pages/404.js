@@ -5,7 +5,7 @@ import SEO from 'components/shared/SEO';
 
 const NotFoundPage = ({ data }) => (
   <>
-    <SEO title="Not found" />
+    <SEO title="Nie znaleziono" />
   </>
 );
 

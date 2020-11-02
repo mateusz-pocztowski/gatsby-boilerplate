@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme/mainTheme';
+import Navigation from 'components/Navigation/Navigation';
 
 const Wrapper = styled.div`
   position: relative;
@@ -14,6 +15,7 @@ const Wrapper = styled.div`
 const MainLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
+    <Navigation />
     <Wrapper>{children}</Wrapper>
   </ThemeProvider>
 );

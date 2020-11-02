@@ -43,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.white};
     font-family: ${({ theme }) => theme.fonts.mainFont};
     font-size: 1.6rem;
+    line-height: normal;
   }
 `;
 

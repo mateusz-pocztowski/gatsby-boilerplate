@@ -1,19 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { breakpoints } from 'theme/mainTheme';
 
-const useMedia = query => {
-  const [matches, setMatches] = useState(false)
+const useMedia = breakpoint => {
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia(query)
-    if (media.matches !== matches) setMatches(media.matches)
+    const media = window.matchMedia(
+      `(min-width: ${breakpoints[breakpoint.toLowerCase()]}px)`
+    );
+    if (media.matches !== matches) setMatches(media.matches);
 
-    const listener = () => setMatches(media.matches)
-    media.addListener(listener)
+    const listener = () => setMatches(media.matches);
+    media.addListener(listener);
 
-    return () => media.removeListener(listener)
-  }, [query, matches])
+    return () => media.removeListener(listener);
+  }, [breakpoint, matches]);
 
-  return matches
-}
+  return matches;
+};
 
-export default useMedia
+export const useCustomMedia = query => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) setMatches(media.matches);
+
+    const listener = () => setMatches(media.matches);
+    media.addListener(listener);
+
+    return () => media.removeListener(listener);
+  }, [query, matches]);
+
+  return matches;
+};
+
+export default useMedia;

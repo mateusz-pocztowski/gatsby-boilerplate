@@ -1,6 +1,6 @@
 import * as polished from 'polished';
 
-const breakpoints = {
+export const breakpoints = {
   xs: 440,
   s: 576,
   md: 768,
@@ -20,6 +20,7 @@ export const theme = {
     gray100: '#707070',
     gray200: '#EEEEEE',
     gray300: '#BFBFBF',
+    orange: '#F47920',
   },
   light: 300,
   regular: 400,
@@ -40,7 +41,7 @@ export const theme = {
   },
   navSize: {
     desktop: '100px',
-    mobile: '80px',
+    mobile: '75px',
   },
   mq: Object.keys(breakpoints).reduce((acc, breakpoint) => {
     acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;
