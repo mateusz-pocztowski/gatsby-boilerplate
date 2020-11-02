@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import SEO from 'components/shared/SEO';
 import Header from 'components/Header/Header';
+import Navigation from 'components/Navigation/Navigation';
 
 const IndexPage = ({ data }) => {
   const heroImg = data.heroImg.childImageSharp.fluid;
@@ -28,6 +29,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Strona główna" />
+      <Navigation />
       <Header slides={slides} />
       <main>
         <div style={{ height: '100vh' }} />

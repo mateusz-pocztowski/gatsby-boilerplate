@@ -7,10 +7,19 @@ export const HeadingOne = styled.h1`
 `;
 
 export const HeadingTwo = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.xxl};
+  font-size: ${({ theme }) => `calc(${theme.fontSize.xxl} - 2.5rem)`};
   font-weight: ${({ theme }) => theme.semiBold};
   text-align: ${({ align }) => align || 'center'};
   padding: ${({ nopadding }) => (nopadding ? '0' : '0 0 45px')};
+  ${({ theme }) => theme.mq.s} {
+    font-size: ${({ theme }) => `calc(${theme.fontSize.xxl} - 2rem)`};
+  }
+  ${({ theme }) => theme.mq.md} {
+    font-size: ${({ theme }) => `calc(${theme.fontSize.xxl} - 1rem)`};
+  }
+  ${({ theme }) => theme.mq.xl} {
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+  }
 `;
 
 export const HeadingThree = styled.h3`

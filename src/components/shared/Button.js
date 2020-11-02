@@ -11,21 +11,29 @@ const spin = keyframes`
 
 const Button = styled.button`
   display: block;
-  padding: 16px;
+  padding: 16px 30px;
   background: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.mainFont};
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: ${({ theme }) => theme.bold};
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.3s;
   text-align: center;
+  border: 2px solid ${({ theme }) => theme.colors.dark};
   box-shadow: 0 1px 30px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  ${({ theme }) => theme.mq.s} {
+    font-size: ${({ theme }) => theme.fontSize.m};
+  }
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.dark};
+    }
+  }
   ${({ submit }) =>
     submit &&
     css`
